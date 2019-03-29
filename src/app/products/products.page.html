@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header text-center>List</ion-list-header>
+    <ion-item-sliding *ngFor="let item of productsList" #itm>
+      <ion-item [href]="item.href">
+        <ion-icon [name]="item.icon"></ion-icon>
+        {{item.name}}
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-button color="secondary">
+          <ion-icon name="add-circle"></ion-icon>
+          Add
+        </ion-button>
+      </ion-item-options>
+
+      <ion-item-options side="end">
+        <ion-button color="danger">
+          <ion-icon name="remove-circle"></ion-icon>
+          Delete
+        </ion-button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>
