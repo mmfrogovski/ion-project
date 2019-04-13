@@ -1,16 +1,22 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
 const routes: Routes = [
-  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
-  { path: 'products', loadChildren: './products/products.module#ProductsPageModule' },
-  { path: 'to-buy', loadChildren: './to-buy/to-buy.module#ToBuyPageModule' },
-  { path: 'home', loadChildren: './home/home.module#HomePageModule' }
+    {path: '', loadChildren: './tabs/tabs.module#TabsPageModule'},
+    {path: 'products', loadChildren: './products/products.module#ProductsPageModule'},
+    {path: 'to-buy', loadChildren: './to-buy/to-buy.module#ToBuyPageModule'},
+    {path: 'home', loadChildren: './home/home.module#HomePageModule'},
+    {
+        path: 'product-card/:item.name/:item.description/:item.image',
+        loadChildren: './product-card/product-card.module#ProductCardPageModule'
+    }
 
 
 ];
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

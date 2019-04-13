@@ -25,7 +25,8 @@ export class ProductService {
                         quantity: products.quantity,
                         description: products.description,
                         icon: products.icon,
-                        href: products.href
+                        href: products.href,
+                        image: products.image
                     };
                 });
             }));

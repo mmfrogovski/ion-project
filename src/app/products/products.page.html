@@ -8,17 +8,10 @@
   <ion-list>
     <ion-list-header text-center>List</ion-list-header>
     <ion-item-sliding *ngFor="let item of productsList" #itm>
-      <ion-item [href]="item.href">
+      <ion-item (click)="pushProduct(item)">
         <ion-icon [name]="item.icon"></ion-icon>
         {{item.name}}
       </ion-item>
-      <ion-item-options side="start">
-        <ion-button color="secondary">
-          <ion-icon name="add-circle"></ion-icon>
-          Add
-        </ion-button>
-      </ion-item-options>
-
       <ion-item-options side="end">
         <ion-button color="danger">
           <ion-icon name="remove-circle"></ion-icon>
@@ -29,4 +22,8 @@
     </ion-item-sliding>
 
   </ion-list>
+
+  <ion-button href="" id="add">
+    <ion-icon icon="add-circle-outline"></ion-icon>
+  </ion-button>
 </ion-content>

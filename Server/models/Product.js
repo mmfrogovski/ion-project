@@ -21,6 +21,10 @@ const postSchema = new Schema({
     href: {
         type: String,
         required: false
+    },
+    image:{
+        type: String,
+        required: false
     }
 });
 

@@ -29,7 +29,8 @@ router.get('/', async (req, res, next) => {
         description: req.body.description,
         quantity: req.body.quantity,
         icon: req.body.icon,
-        href: req.body.href
+        href: req.body.href,
+        image: req.body.image
     };
 
     const product = new Product(productData);

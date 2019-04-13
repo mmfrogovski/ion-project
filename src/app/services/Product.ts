@@ -5,4 +5,5 @@ export class Product {
     description: string;
     icon: string;
     href: string;
+    image: string;
 }
