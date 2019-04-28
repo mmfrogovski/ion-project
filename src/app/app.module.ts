@@ -9,6 +9,7 @@ import {StatusBar} from '@ionic-native/status-bar/ngx';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
+import {HTTP} from '@ionic-native/http/ngx';
 import {ProductService} from './services/product.service';
 
 @NgModule({
@@ -24,7 +25,8 @@ import {ProductService} from './services/product.service';
         StatusBar,
         SplashScreen,
         ProductService,
-        {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
+        {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+        HTTP
     ],
     bootstrap: [AppComponent]
 })

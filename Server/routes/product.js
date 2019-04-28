@@ -1,10 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../models/Product');
+const bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({extended: false});
 
-router.use(function(req, res, next) {
+router.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "POST, DELETE");
     next();
 });
 
@@ -16,35 +19,39 @@ router.get('/', async (req, res, next) => {
 
 
 // http://localhost:5000/api/product/name  (GET)
-router.get('/:name', async (req, res, next) => {
+router.get('/:name', async (req, res) => {
     const product = await Product.find({name: req.params.name});
     res.status(200).json(product);
 });
 
 
 // http://localhost:5000/api/product  (POST)
-router.get('/', async (req, res, next) => {
+router.post('/', async (req, res) => {
+
     const productData = {
         name: req.body.name,
         description: req.body.description,
-        quantity: req.body.quantity,
-        icon: req.body.icon,
-        href: req.body.href,
         image: req.body.image
     };
 
-    const product = new Product(productData);
+
+    const product = new Product({
+        name: productData.name,
+        description: productData.description,
+        image: productData.image
+    });
+
+
 
     await product.save();
-
     res.status(201).json(product);
 
 });
 
 
-// http://localhost:5000/api/product/id  (DELETE)
-router.get('/:id', async (req, res, next) => {
-    await Product.remove({_id: req.params.id});
+// http://localhost:5000/api/product/name  (DELETE)
+router.delete('/:name', async (req, res) => {
+    await Product.remove({name: req.params.name});
     res.status(200).json({
         message: 'Удален'
     });

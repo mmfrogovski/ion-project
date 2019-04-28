@@ -10,18 +10,6 @@ const postSchema = new Schema({
         type: String,
         required: false
     },
-    quantity: {
-        type: String,
-        required: false,
-    },
-    icon: {
-        type: String,
-        required: false
-    },
-    href: {
-        type: String,
-        required: false
-    },
     image:{
         type: String,
         required: false
