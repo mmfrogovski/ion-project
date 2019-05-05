@@ -7,7 +7,7 @@ const routes: Routes = [
         path: 'products/:item.name/:item.description/:item.image',
         loadChildren: './products/products.module#ProductsPageModule'
     },
-    {path: 'to-buy', loadChildren: './to-buy/to-buy.module#ToBuyPageModule'},
+    {path: 'to-buy/:item.name/:item.description/:item.image', loadChildren: './to-buy/to-buy.module#ToBuyPageModule'},
     {path: 'home', loadChildren: './home/home.module#HomePageModule'},
     {
         path: 'product-card/:item.name/:item.description/:item.image',

@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>to-buy</ion-title>
+    <ion-title>Products to buy</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-Here u can add products u need to buy.
+<ion-content>
+  <ion-list>
+    <ion-list-header text-center>List</ion-list-header>
+    <ion-item-sliding *ngFor="let item of productsList" #itm>
+      <ion-item (click)="pushProduct(item)">
+        <ion-icon name="basket"></ion-icon>
+        {{item.name}}
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-button color="danger" (click)="removeProduct(item)">
+          <ion-icon name="remove-circle"></ion-icon>
+          Delete
+        </ion-button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-button href="all-products" id="add">
+    <ion-icon icon="add-circle-outline"></ion-icon>
+  </ion-button>
 </ion-content>

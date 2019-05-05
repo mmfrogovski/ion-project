@@ -31,13 +31,19 @@ export class AllProductService {
     }
 
 
-    postProduct(item): Observable<Product> {
-        const data = {
+    postProduct(item: Product): Observable<Product> {
+        const headers = new Headers();
+        headers.append('Accept', 'application/json');
+        headers.append('Content-Type', 'application/json');
+
+        const postData: Product = {
             name: item.name,
             description: item.description,
             image: item.image
         };
-        return this.http.post('http://localhost:5000/api/product', data)
-            .pipe(map(res => res));
+
+        const url = `http://localhost:5000/api/product`;
+        // console.log(url);
+        return this.http.post(url, postData, {'ContentType': 'application/json'});
     }
 }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button ngSwitch="/"></ion-back-button>
     </ion-buttons>
     <ion-title>products</ion-title>
   </ion-toolbar>
@@ -18,7 +18,13 @@
       <ion-item-options side="end">
         <ion-button color="secondary" (click)="pushToFridge(item)">
           <ion-icon name="add-circle"></ion-icon>
-          Add
+          To-Fridge
+        </ion-button>
+      </ion-item-options>
+      <ion-item-options side="start">
+        <ion-button color="secondary" (click)="pushToBasket(item)">
+          <ion-icon name="add-circle"></ion-icon>
+          To-Buy
         </ion-button>
       </ion-item-options>
 
