@@ -9,7 +9,6 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header text-center>List</ion-list-header>
     <ion-item-sliding *ngFor="let item of productsList" #itm>
       <ion-item (click)="pushProduct(item)">
         <ion-icon name="cart"></ion-icon>

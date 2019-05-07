@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="">Recipe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="width: 100%">
+  <ion-card>
+    <img [src]="path"  [alt]="passedProduct[0]"/>
+    <!--<ion-card-header>-->
+      <!--<ion-card-title style="font-size: 20px">{{passedProduct[0]}}</ion-card-title>-->
+    <!--</ion-card-header>-->
+    <ion-card-content style="font-size: 15px">
+      {{passedProduct[1]}}
+      <h2 style="font-weight: bold">Ingredients: </h2>
+      <p>{{passedProduct[3]}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

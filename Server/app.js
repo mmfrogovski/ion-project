@@ -3,6 +3,7 @@ const path = require('path');
 const productRouter = require('./routes/product');
 const toBuyProductsRouter = require('./routes/buy-products');
 const allProductsRouter = require('./routes/all-products');
+const recipesRouter = require('./routes/recipes');
 const bodyParser = require('body-parser');
 
 
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/api/product', productRouter);
 app.use('/api/buy-products', toBuyProductsRouter);
 app.use('/api/all-products', allProductsRouter);
+app.use('/api/recipes', recipesRouter);
 app.use(express.static(clientPath));
 
 app.listen(port, () =>{

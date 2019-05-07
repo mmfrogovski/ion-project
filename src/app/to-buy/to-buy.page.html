@@ -6,8 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header text-center>List</ion-list-header>
-    <ion-item-sliding *ngFor="let item of productsList" #itm>
+    <ion-item-sliding *ngFor="let item of productsList">
       <ion-item (click)="pushProduct(item)">
         <ion-icon name="basket"></ion-icon>
         {{item.name}}
@@ -23,7 +22,8 @@
 
   </ion-list>
 
-  <ion-button href="all-products" id="add">
+  <ion-button href="all-products" expand="full">
+    Add new product u need to buy
     <ion-icon icon="add-circle-outline"></ion-icon>
   </ion-button>
 </ion-content>

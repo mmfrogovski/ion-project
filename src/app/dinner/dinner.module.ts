@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import {HomePopoverComponent} from '../breakfast-popover/home-popover.component';
+
 import { IonicModule } from '@ionic/angular';
 
-import { HomePage } from './home.page';
+import { DinnerPage } from './dinner.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: DinnerPage
   }
 ];
 
@@ -21,7 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  entryComponents: [HomePopoverComponent],
-  declarations: [HomePage, HomePopoverComponent]
+  declarations: [DinnerPage]
 })
-export class HomePageModule {}
+export class DinnerPageModule {}

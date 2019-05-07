@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../services/product.service';
 import {NavController} from '@ionic/angular';
 import {Product} from '../services/Product';
-import {ActivatedRoute} from '@angular/router';
+// import {ActivatedRoute} from '@angular/router';
 
 
 @Component({
@@ -13,15 +13,14 @@ import {ActivatedRoute} from '@angular/router';
 export class ProductsPage implements OnInit {
     productsList: Product[] = [];
 
-    constructor(private productService: ProductService, public navCtrl: NavController, private activatedRoute: ActivatedRoute) {
+    constructor(private productService: ProductService, public navCtrl: NavController) {
     }
 
     ngOnInit() {
         this.productService.getProducts().subscribe((data) => {
             this.productsList = data;
-            console.log(this.productsList);
+            // console.log(this.productsList);
         });
-        // console.log(this.productsList);
     }
 
     pushProduct(item) {
@@ -38,4 +37,5 @@ export class ProductsPage implements OnInit {
             });
         });
     }
+
 }
