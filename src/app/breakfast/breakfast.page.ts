@@ -30,9 +30,9 @@ export class BreakfastPage implements OnInit {
         });
         this.recipeService.getRecipes().subscribe((data) => {
             this.recipesList = data;
+            // console.log(this.recipesList);
             this.getByType();
             this.getByIngredients();
-            // console.log(this.recipesList);
         });
         // console.log(this.sortedList);
     }

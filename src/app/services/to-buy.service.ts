@@ -15,7 +15,7 @@ export class ToBuyService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get('http://localhost:5000/api/buy-products')
+    return this.http.get('http://192.168.100.2:5000/api/buy-products')
         .pipe(map((data) => {
           const productList = [].slice.call(data);
           return productList.map(function (products: any) {
